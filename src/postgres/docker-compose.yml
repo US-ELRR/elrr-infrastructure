@@ -1,0 +1,14 @@
+# docker-compose.yml
+version: '3.6'
+services:
+  postgresql:
+    image: "postgres:13.2-alpine" # use latest official postgres version
+    env_file:
+      - database.env # configure postgres
+    ports:
+      - 5480:5432
+    volumes:
+      - ./elrr-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+    restart: always
+volumes:
+  database-data: # named volumes can be managed easier using docker-compose
