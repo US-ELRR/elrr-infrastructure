@@ -12,3 +12,5 @@ pythonenv*
 __pycache__/
 *.py[cod]
 *$py.class
+
+elrr_ec2_instances.tf
