@@ -8,7 +8,7 @@ resource "aws_instance" "elrr_local_staging" {
   subnet_id = aws_subnet.elrr_local_staging_subnet.id
 
   tags = {
-    Name = "var.local_staging_ec2"
+    Name = "elrr_local_staging"
   }
 
   vpc_security_group_ids = [
@@ -27,7 +27,7 @@ resource "aws_instance" "elrr_local_staging" {
     volume_size = 30
   }
 
-  user_data = "user_data/elrr_local_staging.txt"
+  user_data = file("user_data/elrr_local_staging.txt")
 }
 
 resource "aws_network_interface" "elrr_local_staging_interface" {

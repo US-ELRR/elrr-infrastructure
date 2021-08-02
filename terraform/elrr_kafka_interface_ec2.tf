@@ -8,7 +8,7 @@ resource "aws_instance" "elrr_kafka" {
   subnet_id = aws_subnet.elrr_kafka_subnet.id
 
   tags = {
-    Name = "var.kafka_ec2"
+    Name = "elrr_kafka"
   }
 
   vpc_security_group_ids = [
@@ -26,7 +26,7 @@ resource "aws_instance" "elrr_kafka" {
     volume_type = "gp2"
     volume_size = 30
   }
-  user_data = "user_data/elrr_kafka_interface.txt"
+  user_data = file("user_data/elrr_kafka_interface.txt")
 }
 
 resource "aws_network_interface" "elrr_kafka_interface" {
@@ -47,7 +47,7 @@ resource "aws_instance" "elrr_zookeeper" {
   subnet_id = aws_subnet.elrr_kafka_subnet.id
 
   tags = {
-    Name = "var.zookeeper_ec2"
+    Name = "elrr_zookeeper"
   }
 
   vpc_security_group_ids = [
@@ -66,7 +66,7 @@ resource "aws_instance" "elrr_zookeeper" {
     volume_size = 30
   }
 
-  user_data = "user_data/elrr_kafka_interface.txt"
+  user_data = file("user_data/elrr_kafka_interface.txt")
 }
 
 resource "aws_network_interface" "elrr_zookeeper_interface" {

@@ -8,7 +8,7 @@ resource "aws_instance" "elrr_agent1" {
   subnet_id = aws_subnet.elrr_agent_subnet.id
 
   tags = {
-    Name = "var.agent1_ec2"
+    Name = "elrr_agent1"
   }
 
   vpc_security_group_ids = [
@@ -27,7 +27,7 @@ resource "aws_instance" "elrr_agent1" {
     volume_size = 30
   }
 
-  user_data  = "user_data/elrr_agent_interface.txt"
+  user_data  = file("user_data/elrr_agent_interface.txt")
 }
 
 resource "aws_network_interface" "elrr_agent1_interface" {
@@ -48,7 +48,7 @@ resource "aws_instance" "elrr_agent2" {
   subnet_id = aws_subnet.elrr_agent_subnet.id
 
   tags = {
-    Name = "var.agent2_ec2"
+    Name = "elrr_agent2"
   }
 
   vpc_security_group_ids = [
@@ -67,7 +67,7 @@ resource "aws_instance" "elrr_agent2" {
     volume_size = 30
   }
 
-  user_data  = "user_data/elrr_agent_interface.txt"
+  user_data  = file("user_data/elrr_agent_interface.txt")
 }
 
 resource "aws_network_interface" "elrr_agent2_interface" {
@@ -88,7 +88,7 @@ resource "aws_instance" "elrr_agent3" {
   subnet_id = aws_subnet.elrr_agent_subnet.id
 
   tags = {
-    Name = "var.agent3_ec2"
+    Name = "elrr_agent3"
   }
 
   vpc_security_group_ids = [
@@ -107,7 +107,7 @@ resource "aws_instance" "elrr_agent3" {
     volume_size = 30
   }
 
-  user_data  = "user_data/elrr_agent_interface.txt"
+  user_data  = file("user_data/elrr_agent_interface.txt")
 }
 
 resource "aws_network_interface" "elrr_agent3_interface" {
@@ -128,7 +128,7 @@ resource "aws_instance" "elrr_agent4" {
   subnet_id = aws_subnet.elrr_agent_subnet.id
 
   tags = {
-    Name = "var.agent4_ec2"
+    Name = "elrr_agent4"
   }
 
   vpc_security_group_ids = [
@@ -146,7 +146,7 @@ resource "aws_instance" "elrr_agent4" {
     volume_type = "gp2"
     volume_size = 30
   }
-  user_data  = "user_data/elrr_agent_interface.txt"
+  user_data  = file("user_data/elrr_agent_interface.txt")
 }
 
 resource "aws_network_interface" "elrr_agent4_interface" {

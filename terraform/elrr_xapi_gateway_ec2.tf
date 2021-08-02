@@ -8,7 +8,7 @@ resource "aws_instance" "elrr_xapi_gateway" {
   subnet_id = aws_subnet.elrr_xapi_gateway_subnet.id
 
   tags = {
-    Name = "var.xapi_gateway_ec2"
+    Name = "elrr_xapi_gateway"
   }
 
   vpc_security_group_ids = [
@@ -27,7 +27,7 @@ resource "aws_instance" "elrr_xapi_gateway" {
     volume_size = 30
   }
 
-  user_data = "user_data/elrr_xapi_gateway.txt"
+  user_data = file("user_data/elrr_xapi_gateway.txt")
 }
 
 resource "aws_network_interface" "elrr_xapi_gw_network_interface" {

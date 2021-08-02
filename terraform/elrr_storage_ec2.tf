@@ -8,7 +8,7 @@ resource "aws_instance" "elrr_storage" {
   subnet_id = aws_subnet.elrr_storage_subnet.id
 
   tags = {
-    Name = "var.storage_ec2"
+    Name = "elrr_storage"
   }
 
   vpc_security_group_ids = [
@@ -27,7 +27,7 @@ resource "aws_instance" "elrr_storage" {
     volume_size = 30
   }
 
-  user_data = "user_data/elrr_storage.txt"
+  user_data = file("user_data/elrr_storage.txt")
 }
 
 resource "aws_network_interface" "elrr_storage_interface" {
