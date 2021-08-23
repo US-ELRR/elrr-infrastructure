@@ -70,8 +70,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo systemctl enable docker
 sudo systemctl status docker
 ```
-
-# Install, start and enable firewalld on ubuntu
+Install, start and enable firewalld on ubuntu
 ```console
 sudo apt-get install firewalld -y
 sudo systemctl start firewalld.service
@@ -79,14 +78,14 @@ sudo systemctl enable firewalld.service
 sudo systemctl status firewalld.service
 ```
 
-# Allow connections and test connection from bastion host
+Allow connections and test connection from bastion host
 ```console
 sudo firewall-cmd --zone=public --add-port=22/tcp --permanent;
 sudo firewall-cmd --zone=public --add-port=5480/tcp --permanent;
 sudo firewall-cmd --reload;
 ```
 
-# Test connection from bastion host
+Test connection from bastion host
 ```console
 telnet <ip-address> <port>
 ```
@@ -98,11 +97,11 @@ sudo docker exec -it <POSTGRES_CONTAINER_NAME> bash
 
 Once the shell starts up, execute `psql -U $POSTGRES_USER` which will use the username from your `database.env` file created earlier. Congrats! You've now logged into a PostgreSQL database and are ready to provision tables and manipulate data.
 
-# Adjust PostgreSQL configuration so that remote connections to the database(s) are possible.
+Adjust PostgreSQL configuration so that remote connections to the database(s) are possible.
 ```console
 RUN echo "host all  all  <basion-host-ip>  md5" >> /var/lib/postgresql/data/pg_hba.conf
 ```
-# And add ``listen_addresses`` to ``/var/lib/postgresql/data/postgresql.conf``
+And add listen_addresses to /var/lib/postgresql/data/postgresql.conf
 ```console
 grep listen /var/lib/postgresql/data/postgresql.conf
 RUN echo "listen_addresses='*'" >> /var/lib/postgresql/data/postgresql.conf
