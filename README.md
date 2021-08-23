@@ -6,14 +6,19 @@ This directory contains the code to install, configure, and run infrastructure a
 
 Intended use of this code is that a user could reference the steps below, including the associated scripts within this repository, to build a ELRR application within their own environment. The build for ELRR consists of the following components:
 
+Each component contains its own file and README for installation / configuration within their respective folder in the `src` folder.
+
 - ELRR Portal
 - xAPI Gateway
-- ELRR Database
+- ELRR Database 
 - ELRR Staging Database
 - DATASIM (for testing)
 - Jenkins
 
-Each component contains its own file and README for installation / configuration within their respective folder in the `src` folder.
+PATHS:
+Database: US-ELRR/elrr-infrastructure/src/postgres/
+US-ELRR/elrr-infrastructure/src/jenkins/
+US-ELRR/elrr-infrastructure/src/datasim/
 
 ## Capabilities and limitations
 
