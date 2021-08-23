@@ -9,6 +9,8 @@ Intended use of this code is that a user could reference the steps below, includ
 ## Capabilities and limitations
 
 The code in this repository leverages Docker images for running majority of the core applications. While the code has been tested on AWS EC2 instances, the code should be able to run on any major cloud platform with parameter tweaks, but has not been verified. The current code base utilizes separate virtual machines (VMs) for each of the core components.
+Note that connection to the database will be from the bastion host since the databases are in private subnets
+Configure AWS security groups to allow appropriate ports and ips
 
 In the future, the development team will explore running the ELRR suite using Docker Compose and/or on Kubernetes.
 
@@ -17,7 +19,7 @@ In the future, the development team will explore running the ELRR suite using Do
 The following steps are related to running a 2-node set-up with a Jenkins Master and Jenkins Agent using Docker. The Jenkins Agent server is essentially a 'Docker host' which dynamically spins up/down Jenkins Agent containers, as needed.
 
 
-### Login into bastion host
+# Login into bastion host
 Setup ssh connection between bastion host and database servers and verify connections
 ```console
 ssh -i ~/.ssh/<key-name.pem> <hostname>@<address>
@@ -94,7 +96,7 @@ RUN echo "host all  all  <basion-host-ip>  md5" >> /var/lib/postgresql/data/pg_h
 grep listen /var/lib/postgresql/data/postgresql.conf
 RUN echo "listen_addresses='*'" >> /var/lib/postgresql/data/postgresql.conf
 ```
-### Configure PostgreSQL Database
+# Configure PostgreSQL Database
 Install psql client on Ubuntu (Both on database server and bastion host)
 ```console
 sudo apt update
@@ -107,7 +109,7 @@ psql -V
 psql -h <database hostname/ip-address> -p <database-port> -U <database-user>
 ```
 
-### Configure PostgreSQL Database
+# Configure PostgreSQL Database
 Create database
 Create Read-Only role and Read-Write role
 Grant privileges to roles
