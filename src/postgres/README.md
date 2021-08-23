@@ -110,11 +110,11 @@ psql -h <database hostname/ip-address> -p <database-port> -U <database-user>
 ```
 
 # Configure PostgreSQL Database
-Create database/schemas
-Create Read-Only role and Read-Write role
-Grant privileges to roles
-Create uses and password
-Grant roles to users
+* Create database/schemas
+* Create Read-Only role and Read-Write role
+* Grant privileges to roles
+* Create uses and password
+* Grant roles to users
 
 ## Further resources
 
