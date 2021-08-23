@@ -70,7 +70,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo systemctl enable docker
 sudo systemctl status docker
 ```
-Install, start and enable firewalld on ubuntu
+# Install, start and enable firewalld on ubuntu
 ```console
 sudo apt-get install firewalld -y
 sudo systemctl start firewalld.service
@@ -78,19 +78,19 @@ sudo systemctl enable firewalld.service
 sudo systemctl status firewalld.service
 ```
 
-Allow connections and test connection from bastion host
+# Allow connections and test connection from bastion host
 ```console
 sudo firewall-cmd --zone=public --add-port=22/tcp --permanent;
 sudo firewall-cmd --zone=public --add-port=5480/tcp --permanent;
 sudo firewall-cmd --reload;
 ```
 
-Test connection from bastion host
+# Test connection from bastion host
 ```console
 telnet <ip-address> <port>
 ```
 
-After the shell completes, run the `sudo docker ps` command to capture the 'Name' of your container. Save this value. With the container name, run the following command to create an 'interactive' environment with the container.
+### After the shell completes, run the `sudo docker ps` command to capture the 'Name' of your container. Save this value. With the container name, run the following command to create an 'interactive' environment with the container.
 ```console
 sudo docker exec -it <POSTGRES_CONTAINER_NAME> bash
 ```
