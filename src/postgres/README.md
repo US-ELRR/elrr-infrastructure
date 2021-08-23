@@ -19,7 +19,18 @@ In the future, the development team will explore running the ELRR suite using Do
 The following steps are related to running a 2-node set-up with a Jenkins Master and Jenkins Agent using Docker. The Jenkins Agent server is essentially a 'Docker host' which dynamically spins up/down Jenkins Agent containers, as needed.
 
 
-# Login into bastion host
+### Bastion host Setup
+Download pgadmin docker compose and run 
+```console
+git clone https://github.com/US-ELRR/elrr-infrastructure.git
+```
+
+Change directory into postgress and run the docker-compose-pgadmin.yml file
+```console
+docker-compose -f docker-compose-pgadmin.yml up
+```
+
+Download private key and ssh into private instance
 Setup ssh connection between bastion host and database servers and verify connections
 ```console
 ssh -i ~/.ssh/<key-name.pem> <hostname>@<address>
@@ -46,7 +57,7 @@ POSTGRES_USER=<ENTER-USERNAME>
 POSTGRES_PASSWORD=<ENTER-PASSWORD>
 ```
 
-Once the `database.env` file has been generated, run the following command to start the Postgres database:
+Once the `database.env` file has been generated, change the permissions and run the following command to start the Postgres database:
 ```console
 . ./postgres_install.sh
 ```
@@ -115,6 +126,8 @@ psql -h <database hostname/ip-address> -p <database-port> -U <database-user>
 * Grant privileges to roles
 * Create uses and password
 * Grant roles to users
+
+Install pgadmin4 on windows and test connections
 
 ## Further resources
 
