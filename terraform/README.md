@@ -3,7 +3,7 @@ This repository contains Terraform scripts to deploy necessary resources to run 
 # Intended Use
 This repository is inteded for deploying infrastructure resources.
 
-# Install aws-cli if not already installed
+# Install aws-cli
 ```
 sudo apt install awscli
 ```
