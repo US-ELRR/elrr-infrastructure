@@ -26,6 +26,9 @@ resource "aws_instance" "elrr_k8_master" {
     volume_type = "gp2"
     volume_size = 30
   }
+
+  user_data  = file("user_data/elrr_k8.txt")
+
 }
 
 resource "aws_network_interface" "elrr_k8_master_interface" {
@@ -64,6 +67,9 @@ resource "aws_instance" "elrr_k8_node1" {
     volume_type = "gp2"
     volume_size = 30
   }
+
+  user_data  = file("user_data/elrr_k8.txt")
+
 }
 
 resource "aws_network_interface" "elrr_k8_node1_interface" {
@@ -102,6 +108,9 @@ resource "aws_instance" "elrr_k8_node2" {
     volume_type = "gp2"
     volume_size = 30
   }
+
+  user_data  = file("user_data/elrr_k8.txt")
+
 }
 
 resource "aws_network_interface" "elrr_k8_node2_interface" {
@@ -140,6 +149,9 @@ resource "aws_instance" "elrr_k8_node3" {
     volume_type = "gp2"
     volume_size = 30
   }
+
+  user_data  = file("user_data/elrr_k8.txt")
+
 }
 
 resource "aws_network_interface" "elrr_k8_node3_interface" {
