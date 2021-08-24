@@ -1,7 +1,26 @@
 # ELRR - Infrastructure
 This repository contains Terraform scripts to deploy necessary resources to run the Enterprise Learner Record Repository.
 # Intended Use
-This repository is inteded for System Administrators that would use Terraform scripts to deploy and administer the resources.
+This repository is inteded for deploying infrastructure resources.
+
+# Install aws-cli if not already installed
+```
+sudo apt install awscli
+```
+
+# Configure aws role to deploy resources listed in the templates
+IAM role should have enough privileges to deploy listed resources in the templates.
+
+AWS Configure to authenticate using IAM role:
+```
+aws configure
+```
+
+Paste AWS access key for the user then click enter
+Paste AWS secret key for the user then click enter
+
+IAM role should be configured and ready to use Terraform.
+
 # Installing Terraform
 If Terraform is not installed, run commands below (example shown for Ubuntu OS. For others, navigate here: https://learn.hashicorp.com/tutorials/terraform/install-cli)
 
@@ -56,4 +75,9 @@ terraform plan
 When Terraform plan output looks as expected and any errors have been fixed, it is time to apply. It is important to understand what is being deployed and plan out the cost of resources being created. Terraform apply will run through the templates and output a list of resources to be created once more and have the system operator running the command confirm with a simple yes or no answer. When ready to deploy, enter yes and Terraform will work its magic and create an entire infrastructure or specified resources that have been defined in the Terraform templates.
 ```
 terraform apply
+```
+
+Resources deployed using Terraform templates can be deleted using a simple command. Below command will destroy all resources created from terraform apply command above.
+```
+terraform destroy
 ```
