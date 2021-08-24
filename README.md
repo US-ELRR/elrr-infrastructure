@@ -9,9 +9,11 @@ Intended use of this code is that a user could reference the steps below, includ
 - ELRR Portal
 - xAPI Gateway
 - ELRR Database
-- ELRR Staging Database
 - DATASIM (for testing)
 - Jenkins
+- Terraform
+- Kafka-Zookeeper
+- Kubernetes
 
 Each component contains its own file and README for installation / configuration within their respective folder in the `src` folder.
 
@@ -24,6 +26,12 @@ IN the future, the development team will explore running the ELRR suite using Do
 ## Directions for use
 
 Navigate to the `src` folder and select the component you wish to configure. At this time, we recommend each component is installed on a separate VM for performance and stability reasons.
+* [Datasim](https://github.com/US-ELRR/elrr-infrastructure/tree/main/src/datasim)
+* [Jenkins](https://github.com/US-ELRR/elrr-infrastructure/blob/main/src/jenkins/README.md)
+* [Postgres](https://github.com/US-ELRR/elrr-infrastructure/blob/main/src/jenkins/README.md)
+* [Terraform](https://github.com/US-ELRR/elrr-infrastructure/blob/main/src/terraform/README.md)
+* [Kafka-Zookeeper](https://github.com/US-ELRR/elrr-infrastructure/blob/main/src/kafka-zookeeper/README.md)
+* [Kubernetes](https://github.com/US-ELRR/elrr-infrastructure/blob/main/src/kubernetes/README.md)
 
 ## Further resources
 
