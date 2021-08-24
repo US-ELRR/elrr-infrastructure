@@ -42,7 +42,7 @@ Pre-requisites:
 - A Linux VM (Ubuntu 18.04) has been stood-up and configured (2 vCPU and 4 GB is recommended at minimum)
 - You are able to SSH into your VM
 - TCP 80/443 ports (inbound) are open to the Internet
-- TCP 5432 port (inbound) is opened to your IP address
+- TCP 5480 port (inbound) is opened to your IP address
 
 First, SSH into the VM. Once in the VM, run the below command to clone the ELRR infrastructure repo to the local machine:
 ```console
@@ -126,7 +126,7 @@ psql -h <database hostname/ip-address> -p <database-port> -U <database-user>
 * Create uses and password
 * Grant roles to users
 
-Install pgadmin4 on windows and test connections
+Note: You can either use the linux CLI or install and use pgadmin4 on windows for the databases.
 
 ## Further resources
 
