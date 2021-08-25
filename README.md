@@ -1,6 +1,6 @@
 # elrr-infrastructure
 
-This directory contains the code to install, configure, and run infrastructure associated with the Enterprise Learner Record Repository project.
+This directory contains the code to install, configure, and run infrastructure associated with the Enterprise Learner Record project.
 
 ## Intended use
 
@@ -9,9 +9,7 @@ Intended use of this code is that a user could reference the steps below, includ
 ## Directions for use
 
 Navigate to the `src` folder and select the component you wish to configure. At this time, we recommend each component is installed on a separate VM for performance and stability reasons. The build for ELRR consists of the following components:
-- ELRR Portal
 - xAPI Gateway
-- DATASIM (for testing)
 * [Datasim](https://github.com/US-ELRR/elrr-infrastructure/tree/main/src/datasim)
 * [Jenkins](https://github.com/US-ELRR/elrr-infrastructure/blob/main/src/jenkins/README.md)
 * [Postgres](https://github.com/US-ELRR/elrr-infrastructure/blob/main/src/jenkins/README.md)
